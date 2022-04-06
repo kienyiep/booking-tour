@@ -1,0 +1,93 @@
+extends base
+
+block content
+  main.main
+    .add-Tour-form
+      #token(data-token=`${token}`) 
+      h2.heading-secondary.ma-bt-lg.tour__heading Create New Tour
+      form.form.form-addTour(action='/add-user-data' method='POST' entype='multipart/form-data')
+        .form__container
+          .form__content
+            .form__group
+              label.form__label(for='name') Tour Name
+              input#tourName.form__input(type='text', placeholder='name' ,required)
+            .form__group
+              label.form__label(for='price') Price
+              input#tourPrice.form__input(type='text', placeholder='price' ,required)
+            .form__group
+              label.form__label(for='priceDiscount') Price Discount
+              input#tourPriceDiscount.form__input(type='text', placeholder='price',required)
+  
+            .form__group.ma-bt-md
+              label.form__label(for='duration') Duration
+              input#tourDuration.form__input(type='text', placeholder='duration' ,required)
+            .form__group.ma-bt-md
+              label.form__label(for='diffculty') Difficulty
+              input#tourDifficulty.form__input(type='text', placeholder='difficluty' ,required)
+            .form__group.ma-bt-md
+              label.form__label(for='groupSize') Max Group Size
+              input#tourGroupSize.form__input(type='text', placeholder='group size'  ,required)   
+            .form__group.ma-bt-md
+              label.form__label(for='startLocation') Start Location
+              .form__location
+                input#startlat.form__input--coordinate(type='text', placeholder='lat')
+                input#startlong.form__input--coordinate(type='text', placeholder='long')
+                input#startDescription.form__input--location(type='text', placeholder='description')
+                input#startAddress.form__input--location(type='text', placeholder='day')
+            .form__group.ma-bt-md
+              label.form__label(for='description') Descriptions
+              input#tourDescriptions.form__input(type='text', placeholder='description')   
+            .form__group.ma-bt-md
+              label.form__label(for='summary') Summary
+              input#tourSummary.form__input(type='text', placeholder='summary')   
+           
+          .form__content
+            .form__group
+              label.form__label(for='imageCover') Image Cover
+              input.form__upload(type='file',accept='image/*',id='tourImageCover')
+              label(for='tourImageCover') choose new photo
+            .form__group.ma-bt-md 
+              label.form__label(for='images') Images
+              input.form__upload(type='file',accept='image/*',id='tourPhoto1')
+              label(for='tourPhoto1') choose new photo
+              |    
+              input.form__upload(type='file',accept='image/*',id='tourPhoto2')
+              label(for='tourPhoto2') choose new photo
+              |    
+              input.form__upload(type='file',accept='image/*',id='tourPhoto3')
+              label(for='tourPhoto3') choose new photo
+            .form__group
+              label.form__label(for='locations') Locations
+              .form__location
+                input#tourlat.form__input--coordinate(type='text', placeholder='lat')
+                input#tourlong.form__input--coordinate(type='text', placeholder='long')
+                input#tourDescription.form__input--location(type='text', placeholder='description')
+                input#tourDay.form__input--location(type='text', placeholder='day')
+              .form__location
+                input#tourlat2.form__input--coordinate(type='text', placeholder='lat')
+                input#tourlong2.form__input--coordinate(type='text', placeholder='long')
+                input#tourDescription2.form__input--location(type='text', placeholder='description')
+                input#tourDay2.form__input--location(type='text', placeholder='day')
+              .form__location
+                input#tourlat3.form__input--coordinate(type='text', placeholder='lat')
+                input#tourlong3.form__input--coordinate(type='text', placeholder='long')
+                input#tourDescription3.form__input--location(type='text', placeholder='description')
+                input#tourDay3.form__input--location(type='text', placeholder='day')
+            .form__group
+              label.form__label(for='startDate') Starting Date
+              input#tourDate1.form__input(type='date', placeholder='date')
+              <br>
+              input#tourDate2.form__input(type='date', placeholder='date')
+              <br>
+              input#tourDate3.form__input(type='date', placeholder='dates')
+              
+            .form__group
+              label.form__label(for='guides') Guides
+              input#tourGuide1.form__input(type='text', placeholder='guide name')
+              <br>
+              input#tourGuide2.form__input(type='text', placeholder='guide name')
+              <br>
+              input#tourGuide3.form__input(type='text', placeholder='guide name')
+              
+        .form__group
+          button.btn.btn--green Add new tour
