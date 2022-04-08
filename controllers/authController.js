@@ -191,7 +191,7 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
   const resetToken = await user.createPasswordResetToken();
   await user.save({ validateBeforeSave: false }); // deactivate all the validators that we specified in our schema
 
-  //3) Send it to user's email
+  //3) Send it to user email
 
   // const message = `Forgot your password? Submit a PATCH request with your new password and passwordConfirm to: ${resetURL}.\ nIf you didn't forget your password, please ignore this email.`;
 
