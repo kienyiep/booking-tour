@@ -194,7 +194,7 @@ exports.getMyTours = catchAsync(async (req, res, next) => {
 });
 
 exports.updateUserData = catchAsync(async (req, res, next) => {
-  // never update password here, as it is not going to run safe middleware which will take care encrypt our password
+  // never updates password here, as it is not going to run safe middleware which will take care encrypt our password
   const updatedUser = await User.findByIdAndUpdate(
     req.user.id,
     {
